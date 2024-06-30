@@ -1,5 +1,5 @@
 interface DisplayProps {
-  sum: number;
+  sum: string;
 }
 
 const Display: React.FC<DisplayProps> = ({ sum }) => {

@@ -22,7 +22,7 @@ export const calculateSum = (sumArray: string[]) => {
     }
     if (element === "-") {
       sum =
-        sum + Number(wholeNumberArray[wholeNumberArray.indexOf(element) + 1]);
+        sum - Number(wholeNumberArray[wholeNumberArray.indexOf(element) + 1]);
     }
     if (element === "x") {
       sum =
