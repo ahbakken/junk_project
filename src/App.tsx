@@ -13,7 +13,13 @@ import JunkSection from "./sections/junk";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import { useDisclosure } from "@mantine/hooks";
 import Home from "./sections/home";
-import { IconHome, IconCalculator, IconPaw } from "@tabler/icons-react";
+import {
+  IconHome,
+  IconCalculator,
+  IconPaw,
+  IconPokeball,
+} from "@tabler/icons-react";
+import PokemonSection from "./sections/pokemon";
 
 export default function App() {
   const [opened] = useDisclosure();
@@ -38,22 +44,29 @@ export default function App() {
                 component={Link}
                 to="/"
                 label="Home"
-                style={{ width: "30%" }}
+                style={{ width: "15%" }}
                 leftSection={<IconHome size="1rem" stroke={1.5} />}
               />
               <NavLink
                 component={Link}
                 to="/calculator"
                 label="Calculator"
-                style={{ width: "30%" }}
+                style={{ width: "15%" }}
                 leftSection={<IconCalculator size="1rem" stroke={1.5} />}
               />
               <NavLink
                 component={Link}
                 to="/junk"
                 label="Junk"
-                style={{ width: "30%" }}
+                style={{ width: "15%" }}
                 leftSection={<IconPaw size="1rem" stroke={1.5} />}
+              />
+              <NavLink
+                component={Link}
+                to="/pokemon"
+                label="Pokemon"
+                style={{ width: "15%" }}
+                leftSection={<IconPokeball size="1rem" stroke={1.5} />}
               />
             </Group>
           </AppShell.Header>
@@ -62,6 +75,7 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/calculator" element={<CalculatorSection />} />
               <Route path="/junk" element={<JunkSection />} />
+              <Route path="/pokemon" element={<PokemonSection />} />
             </Routes>
           </Center>
         </AppShell>

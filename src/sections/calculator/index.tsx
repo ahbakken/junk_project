@@ -6,7 +6,7 @@ import SumButton from "../../components/sumButton";
 import { Paper, Stack, Title } from "@mantine/core";
 
 export default function CalculatorSection() {
-  const [display, setDisplay] = useState("");
+  const [display, setDisplay] = useState("0");
   const [sumOfArray, setSumOfArray] = useState<string[]>([]);
 
   const handleAddNumber = (val: string) => {
@@ -20,7 +20,7 @@ export default function CalculatorSection() {
 
   const handleClear = () => {
     setSumOfArray([]);
-    setDisplay("");
+    setDisplay("0");
   };
 
   return (

@@ -13,7 +13,12 @@ export const calculateSum = (sumArray: string[]) => {
   });
 
   wholeNumberArray.push(wholeNumber);
-  sum = Number(wholeNumberArray.find((element) => !isNaN(Number(element))));
+  //TODO: something is wrong when the sum is negative
+  if (wholeNumberArray[0] === "-") {
+    sum = Number(wholeNumberArray[1]) * -1;
+  } else {
+    sum = Number(wholeNumberArray.find((element) => !isNaN(Number(element))));
+  }
 
   wholeNumberArray.forEach((element) => {
     if (element === "+") {
