@@ -1,5 +1,6 @@
 export interface Ability {
-  namedAPIResource: NamedAPIResource;
+  name: string;
+  url: string;
 }
 
 export interface AbilitySlot {
@@ -19,13 +20,13 @@ export interface Form {
 
 export interface GameIndex {
   game_index: number;
-  version: NamedAPIResource;
+  version: NamedAPIResource[];
 }
 
-export interface NamedAPIResource {
+export type NamedAPIResource = {
   name: string;
   url: string;
-}
+};
 
 export interface HeldItem {
   item: NamedAPIResource;
@@ -65,7 +66,7 @@ export interface Sprite {
 }
 
 export interface Species {
-  namedAPIResource: NamedAPIResource;
+  species: NamedAPIResource;
 }
 
 export interface Stat {

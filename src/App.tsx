@@ -3,7 +3,7 @@ import {
   MantineProvider,
   AppShell,
   Center,
-  Group,
+  Flex,
   NavLink,
 } from "@mantine/core";
 import { theme } from "./theme";
@@ -31,7 +31,7 @@ export default function App() {
           title="Junk Project"
           withBorder
           padding={"md"}
-          header={{ height: 60 }}
+          header={{ height: 55 }}
           navbar={{
             width: 300,
             breakpoint: "sm",
@@ -39,36 +39,36 @@ export default function App() {
           }}
         >
           <AppShell.Header>
-            <Group>
+            <Flex justify="flex-start" align="center" direction="row">
               <NavLink
                 component={Link}
                 to="/"
                 label="Home"
                 style={{ width: "15%" }}
-                leftSection={<IconHome size="1rem" stroke={1.5} />}
+                leftSection={<IconHome size="2rem" stroke={1.5} />}
               />
               <NavLink
                 component={Link}
                 to="/calculator"
                 label="Calculator"
                 style={{ width: "15%" }}
-                leftSection={<IconCalculator size="1rem" stroke={1.5} />}
+                leftSection={<IconCalculator size="2rem" stroke={1.5} />}
               />
               <NavLink
                 component={Link}
                 to="/junk"
                 label="Junk"
                 style={{ width: "15%" }}
-                leftSection={<IconPaw size="1rem" stroke={1.5} />}
+                leftSection={<IconPaw size="2rem" stroke={1.5} />}
               />
               <NavLink
                 component={Link}
                 to="/pokemon"
                 label="Pokemon"
                 style={{ width: "15%" }}
-                leftSection={<IconPokeball size="1rem" stroke={1.5} />}
+                leftSection={<IconPokeball size="2rem" stroke={1.5} />}
               />
-            </Group>
+            </Flex>
           </AppShell.Header>
           <Center>
             <Routes>

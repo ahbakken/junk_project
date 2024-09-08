@@ -8,10 +8,15 @@ export default function PokemonSearch() {
   const [pokemon, setPokemon] = useState<Pokemon | undefined>();
   const [pokemonList, setPokemonList] = useState<string[]>();
   const [search, setSearch] = useState("");
+  const [error, setError] = useState(false);
 
   const handleClick = async () => {
-    if (search) {
+    if (pokemonList && pokemonList.includes(search)) {
+      setError(false);
       setPokemon(await getPokemon(search));
+    }
+    if (pokemonList && !pokemonList.includes(search)) {
+      setError(true);
     }
   };
 
@@ -46,6 +51,7 @@ export default function PokemonSearch() {
           maxDropdownHeight={200}
           data={pokemonList}
           value={search}
+          error={error}
           onChange={setSearch}
           onKeyDown={(event) => {
             if (event.key === "Enter") {

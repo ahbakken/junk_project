@@ -3,7 +3,7 @@ import PokemonSearch from "./components/pokemonSearch";
 
 export default function PokemonSection() {
   return (
-    <Stack bg="var(--mantine-color-body)" justify="center">
+    <Stack justify="center" style={{ paddingBottom: "7em" }}>
       <Title
         order={1}
         style={{
@@ -13,7 +13,7 @@ export default function PokemonSection() {
           marginBottom: "3rem",
         }}
       >
-        Pokemon today
+        Pokemon
       </Title>
       <PokemonSearch />
     </Stack>
